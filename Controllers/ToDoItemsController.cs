@@ -117,7 +117,7 @@ namespace Kotarski_Wiktor_ToDo_API.Controllers
             var result = _context.Items.Where(item => (item.DateOfExpiry.Date >= startOfWeek && item.DateOfExpiry.Date <= endOfWeek)).ToList();
 
             if (result == null || result.Count == 0)
-                return new JsonResult(NotFound(startOfWeek));
+                return new JsonResult(NotFound());
 
             return new JsonResult(Ok(result));
         }
